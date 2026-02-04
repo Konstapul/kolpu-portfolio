@@ -2,95 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Kolpu Photography - Nordic Minimalist Design System
+   Monochromatic palette with editorial elegance
+   All colors MUST be HSL */
 
 @layer base {
   :root {
+    /* Core Monochromatic Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 5%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Pure Black */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft Gray */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Slate Tones */
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Charcoal */
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs - Subtle Lines */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 5%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
+    /* Custom Design Tokens */
+    --slate-soft: 0 0% 75%;
+    --slate-medium: 0 0% 55%;
+    --overlay-dark: 0 0% 0%;
+    --overlay-light: 0 0% 100%;
+
+    /* Sidebar - not used but required */
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 0% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 83%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 60%;
   }
 }
 
@@ -100,6 +107,175 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Typography Scale - Editorial Style */
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-normal tracking-tight;
+  }
+
+  h4 {
+    @apply text-lg font-medium tracking-tight;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Nordic Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-wide uppercase transition-all duration-300 hover:bg-opacity-90;
+  }
+
+  .btn-ghost {
+    @apply text-foreground px-4 py-2 text-sm font-medium tracking-wide transition-all duration-300 hover:text-muted-foreground;
+  }
+
+  /* Hero Typography */
+  .hero-heading {
+    @apply text-5xl md:text-7xl lg:text-[8rem] font-extralight tracking-[-0.02em] leading-[0.9];
+  }
+
+  .hero-subheading {
+    @apply text-base md:text-lg font-light text-muted-foreground tracking-wide;
+  }
+
+  /* Masonry Grid */
+  .masonry-grid {
+    @apply columns-1 md:columns-2 lg:columns-3 gap-4;
+  }
+
+  .masonry-item {
+    @apply break-inside-avoid mb-4;
+  }
+
+  /* Image Hover Effect */
+  .image-hover {
+    @apply relative overflow-hidden cursor-pointer;
+  }
+
+  .image-hover img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-hover:hover img {
+    @apply scale-105;
+  }
+
+  .image-overlay {
+    @apply absolute inset-0 bg-overlay-dark/0 transition-all duration-500 flex items-end p-6;
+  }
+
+  .image-hover:hover .image-overlay {
+    @apply bg-overlay-dark/40;
+  }
+
+  .image-title {
+    @apply text-overlay-light text-lg font-light tracking-wide opacity-0 translate-y-4 transition-all duration-500;
+  }
+
+  .image-hover:hover .image-title {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20;
+  }
+
+  .section-padding-sm {
+    @apply py-16 md:py-20 lg:py-24 px-6 md:px-12 lg:px-20;
+  }
+
+  /* Filter Tabs */
+  .filter-tab {
+    @apply text-sm font-medium tracking-wide text-muted-foreground transition-all duration-300 hover:text-foreground pb-2 border-b-2 border-transparent;
+  }
+
+  .filter-tab-active {
+    @apply text-foreground border-foreground;
+  }
+
+  /* Pricing Card */
+  .pricing-card {
+    @apply bg-card border border-border p-8 md:p-10 transition-all duration-500 hover:border-foreground/20;
+  }
+
+  .pricing-card-featured {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    @apply w-px h-16 bg-foreground/20 relative overflow-hidden;
+  }
+
+  .scroll-indicator::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1/2 bg-foreground animate-scroll-down;
+  }
+
+  /* Form Styles */
+  .form-input {
+    @apply w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors duration-300;
+  }
+
+  /* Lightbox */
+  .lightbox-backdrop {
+    @apply fixed inset-0 bg-overlay-dark/95 z-50 flex items-center justify-center;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(200%);
+    }
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 2s ease-in-out infinite;
+  }
+
+  /* Fade animations for Framer Motion fallback */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Text styles */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Transition utilities */
+  .transition-smooth {
+    @apply transition-all duration-500 ease-out;
   }
 }
