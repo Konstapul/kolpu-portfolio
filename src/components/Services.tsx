@@ -5,16 +5,15 @@ import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const scrollToContact = () => {
-    const element = document.querySelector("#contact");
+    const element = document.querySelector("#yhteystiedot");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="services" className="section-padding bg-secondary">
+    <section id="hinnasto" className="section-padding bg-secondary">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,13 +21,9 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-24"
         >
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
-            Investment
-          </p>
-          <h2>Services & Pricing</h2>
+          <h2>Hinnasto</h2>
         </motion.div>
 
-        {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {pricingPackages.map((pkg, index) => (
             <motion.div
@@ -37,52 +32,28 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`pricing-card ${
-                pkg.featured ? "pricing-card-featured" : ""
-              }`}
+              className={`pricing-card ${pkg.featured ? "pricing-card-featured" : ""}`}
             >
               {pkg.featured && (
                 <span className="text-xs tracking-[0.2em] uppercase opacity-70 mb-4 block">
-                  Most Popular
+                  Suosituin
                 </span>
               )}
-
               <h3 className="mb-2">{pkg.title}</h3>
-
               <div className="mb-4">
-                <span className="text-4xl md:text-5xl font-light">
-                  {pkg.price}
-                </span>
+                <span className="text-4xl md:text-5xl font-light">{pkg.price}</span>
               </div>
-
-              <p
-                className={`text-sm mb-8 ${
-                  pkg.featured ? "opacity-80" : "text-muted-foreground"
-                }`}
-              >
+              <p className={`text-sm mb-8 ${pkg.featured ? "opacity-80" : "text-muted-foreground"}`}>
                 {pkg.description}
               </p>
-
               <ul className="space-y-4 mb-10">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <Check
-                      size={18}
-                      className={`mt-0.5 flex-shrink-0 ${
-                        pkg.featured ? "opacity-80" : "text-muted-foreground"
-                      }`}
-                    />
-                    <span
-                      className={`text-sm ${
-                        pkg.featured ? "opacity-90" : "text-foreground"
-                      }`}
-                    >
-                      {feature}
-                    </span>
+                    <Check size={18} className={`mt-0.5 flex-shrink-0 ${pkg.featured ? "opacity-80" : "text-muted-foreground"}`} />
+                    <span className={`text-sm ${pkg.featured ? "opacity-90" : "text-foreground"}`}>{feature}</span>
                   </li>
                 ))}
               </ul>
-
               <Button
                 onClick={scrollToContact}
                 className={`w-full rounded-none ${
@@ -91,13 +62,12 @@ const Services = () => {
                     : "btn-primary"
                 }`}
               >
-                Get Started
+                Ota yhteyttä
               </Button>
             </motion.div>
           ))}
         </div>
 
-        {/* Note */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -105,8 +75,7 @@ const Services = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center text-muted-foreground text-sm mt-12"
         >
-          Custom packages available for unique projects. Let's discuss your
-          vision.
+          Räätälöidyt paketit saatavilla. Keskustellaan visiostasi.
         </motion.p>
       </div>
     </section>
