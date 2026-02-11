@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navigationLinks } from "@/data/content";
+import { usePortfolio } from "@/contexts/PortfolioContext";
 
 const Navbar = () => {
+  const { showPortfolio } = usePortfolio();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,6 +16,11 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handlePortfolioClick = () => {
+    setIsMobileMenuOpen(false);
+    showPortfolio();
+  };
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -50,14 +57,14 @@ const Navbar = () => {
 
             <div className="hidden md:flex items-center justify-center gap-8 flex-1">
               {navigationLinks.map((link) => (
-                link.href.startsWith("/") ? (
-                  <a
+                link.href === "/portfolio" ? (
+                  <button
                     key={link.href}
-                    href={link.href}
+                    onClick={handlePortfolioClick}
                     className="btn-ghost text-xs tracking-[0.15em] uppercase"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ) : (
                   <button
                     key={link.href}
@@ -98,17 +105,17 @@ const Navbar = () => {
               className="flex flex-col items-center justify-center h-full gap-8"
             >
               {navigationLinks.map((link, index) => (
-                link.href.startsWith("/") ? (
-                  <motion.a
+                link.href === "/portfolio" ? (
+                  <motion.button
                     key={link.href}
-                    href={link.href}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.1 + index * 0.05 }}
+                    onClick={handlePortfolioClick}
                     className="text-2xl font-light tracking-wide"
                   >
                     {link.label}
-                  </motion.a>
+                  </motion.button>
                 ) : (
                   <motion.button
                     key={link.href}

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { heroContent, miniPortfolioItems } from "@/data/content";
+import { usePortfolio } from "@/contexts/PortfolioContext";
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const { showPortfolio } = usePortfolio();
   const row1 = miniPortfolioItems.slice(0, 3);
   const row2 = miniPortfolioItems.slice(3, 6);
   const row3 = miniPortfolioItems.slice(6, 9);
@@ -111,7 +111,7 @@ const Hero = () => {
           className="text-center mt-10 md:mt-14"
         >
           <button
-            onClick={() => navigate("/portfolio")}
+            onClick={showPortfolio}
             className="text-sm md:text-base tracking-[0.3em] uppercase font-medium border-b-2 border-foreground pb-2 hover:text-muted-foreground hover:border-muted-foreground transition-colors duration-300"
           >
             {heroContent.portfolioLinkText}

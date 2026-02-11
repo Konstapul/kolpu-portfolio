@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { Instagram, Linkedin } from "lucide-react";
 import { footerContent, navigationLinks } from "@/data/content";
+import { usePortfolio } from "@/contexts/PortfolioContext";
 
 const Footer = () => {
+  const { showPortfolio } = usePortfolio();
+
+  const handlePortfolioClick = () => {
+    showPortfolio();
+  };
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -29,7 +36,11 @@ const Footer = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="flex flex-col gap-3">
             <span className="text-sm font-medium mb-2">Navigaatio</span>
             {navigationLinks.map((link) => (
-              <button key={link.href} onClick={() => scrollToSection(link.href)} className="text-muted-foreground text-sm hover:text-foreground transition-colors text-left">{link.label}</button>
+              link.href === "/portfolio" ? (
+                <button key={link.href} onClick={handlePortfolioClick} className="text-muted-foreground text-sm hover:text-foreground transition-colors text-left">{link.label}</button>
+              ) : (
+                <button key={link.href} onClick={() => scrollToSection(link.href)} className="text-muted-foreground text-sm hover:text-foreground transition-colors text-left">{link.label}</button>
+              )
             ))}
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="flex flex-col gap-3">

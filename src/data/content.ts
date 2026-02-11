@@ -30,7 +30,7 @@ export interface SocialLink {
 
 // Navigation Links
 export const navigationLinks: NavigationLink[] = [
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Portfolio", href: "/portfolio" }, // Special case: handled by PortfolioContext
   { label: "Osaamiseni", href: "#osaamiseni" },
   { label: "Hinnasto", href: "#hinnasto" },
   { label: "Yhteystiedot", href: "#yhteystiedot" },
