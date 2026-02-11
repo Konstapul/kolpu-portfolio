@@ -1,17 +1,12 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { heroContent, miniPortfolioItems } from "@/data/content";
 
 const Hero = () => {
+  const navigate = useNavigate();
   const row1 = miniPortfolioItems.slice(0, 3);
   const row2 = miniPortfolioItems.slice(3, 6);
   const row3 = miniPortfolioItems.slice(6, 9);
-
-  const scrollToPortfolio = () => {
-    const element = document.querySelector("#portfolio");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="pt-28 pb-16 px-6 md:px-12 lg:px-20 bg-background">
@@ -116,11 +111,14 @@ const Hero = () => {
           className="text-center mt-10 md:mt-14"
         >
           <button
-            onClick={scrollToPortfolio}
+            onClick={() => navigate("/portfolio")}
             className="text-sm md:text-base tracking-[0.3em] uppercase font-medium border-b-2 border-foreground pb-2 hover:text-muted-foreground hover:border-muted-foreground transition-colors duration-300"
           >
             {heroContent.portfolioLinkText}
           </button>
+          <p className="text-muted-foreground text-xs tracking-[0.15em] mt-3">
+            lisää kuvia
+          </p>
         </motion.div>
       </div>
     </section>
