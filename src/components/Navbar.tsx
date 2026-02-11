@@ -48,15 +48,25 @@ const Navbar = () => {
               KP
             </a>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center justify-center gap-8 flex-1">
               {navigationLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="btn-ghost text-xs tracking-[0.15em] uppercase"
-                >
-                  {link.label}
-                </button>
+                link.href.startsWith("/") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="btn-ghost text-xs tracking-[0.15em] uppercase"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="btn-ghost text-xs tracking-[0.15em] uppercase"
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
             </div>
 
@@ -88,16 +98,29 @@ const Navbar = () => {
               className="flex flex-col items-center justify-center h-full gap-8"
             >
               {navigationLinks.map((link, index) => (
-                <motion.button
-                  key={link.href}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 + index * 0.05 }}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-2xl font-light tracking-wide"
-                >
-                  {link.label}
-                </motion.button>
+                link.href.startsWith("/") ? (
+                  <motion.a
+                    key={link.href}
+                    href={link.href}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + index * 0.05 }}
+                    className="text-2xl font-light tracking-wide"
+                  >
+                    {link.label}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={link.href}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + index * 0.05 }}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-2xl font-light tracking-wide"
+                  >
+                    {link.label}
+                  </motion.button>
+                )
               ))}
             </motion.div>
           </motion.div>
