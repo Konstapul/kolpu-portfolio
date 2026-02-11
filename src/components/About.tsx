@@ -3,7 +3,7 @@ import { aboutContent } from "@/data/content";
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-background">
+    <section id="osaamiseni" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
@@ -21,8 +21,6 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-border hidden lg:block" />
           </motion.div>
 
           {/* Content */}
@@ -32,9 +30,6 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
-              About
-            </p>
             <h2 className="mb-8">{aboutContent.heading}</h2>
 
             <div className="space-y-6 mb-12">
@@ -65,7 +60,6 @@ const About = () => {
               ))}
             </div>
 
-            {/* Signature */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

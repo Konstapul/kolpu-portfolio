@@ -1,5 +1,5 @@
-// Kolpu Photography - Content Data
-// Edit this file to update all dynamic content across the website
+// Konsta Pulkkinen - Tapahtuma- ja juhlakuvaaja
+// Muokkaa tätä tiedostoa päivittääksesi sisältöä
 
 export interface PortfolioItem {
   id: string;
@@ -31,197 +31,255 @@ export interface SocialLink {
 // Navigation Links
 export const navigationLinks: NavigationLink[] = [
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Osaamiseni", href: "#osaamiseni" },
+  { label: "Hinnasto", href: "#hinnasto" },
+  { label: "Yhteystiedot", href: "#yhteystiedot" },
 ];
 
-// Hero Content
+// Hero / Landing Content
 export const heroContent = {
-  heading: "Capturing the Unseen",
-  subheading: "Editorial photography that tells your story with elegance and authenticity",
-  ctaText: "View Portfolio",
-  ctaHref: "#portfolio",
+  name: "Konsta Pulkkinen",
+  niche: "Tapahtuma- ja juhlakuvaaja",
+  taglineRow1: "Aitoja hetkiä",
+  taglineRow2: "Ikuisia muistoja",
+  portfolioLinkText: "PORTFOLIO",
 };
 
-// Portfolio Items
+// Mini Portfolio Grid (9 images for landing 3x3)
+export const miniPortfolioItems: PortfolioItem[] = [
+  {
+    id: "mini-1",
+    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80",
+    category: "portraits",
+    title: "Muotokuva 1",
+  },
+  {
+    id: "mini-2",
+    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
+    category: "events",
+    title: "Tapahtuma 1",
+  },
+  {
+    id: "mini-3",
+    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
+    category: "events",
+    title: "Juhla 1",
+  },
+  {
+    id: "mini-4",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    category: "portraits",
+    title: "Muotokuva 2",
+  },
+  {
+    id: "mini-5",
+    imageUrl: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80",
+    category: "events",
+    title: "Tapahtuma 2",
+  },
+  {
+    id: "mini-6",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    category: "creative",
+    title: "Luova 1",
+  },
+  {
+    id: "mini-7",
+    imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80",
+    category: "portraits",
+    title: "Muotokuva 3",
+  },
+  {
+    id: "mini-8",
+    imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80",
+    category: "commercial",
+    title: "Kaupallinen 1",
+  },
+  {
+    id: "mini-9",
+    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80",
+    category: "portraits",
+    title: "Muotokuva 4",
+  },
+];
+
+// Portfolio Items (full portfolio page)
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "1",
     imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
     category: "portraits",
-    title: "Ethereal Light",
+    title: "Muotokuva",
   },
   {
     id: "2",
     imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
     category: "events",
-    title: "Midnight Celebration",
+    title: "Juhlat",
   },
   {
     id: "3",
     imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     category: "commercial",
-    title: "Urban Essence",
+    title: "Kaupallinen",
   },
   {
     id: "4",
     imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     category: "portraits",
-    title: "Silent Strength",
+    title: "Hiljainen voima",
   },
   {
     id: "5",
     imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
     category: "events",
-    title: "Golden Vows",
+    title: "Kultaiset lupaukset",
   },
   {
     id: "6",
     imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     category: "creative",
-    title: "Fluid Motion",
+    title: "Liike",
   },
   {
     id: "7",
     imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80",
     category: "commercial",
-    title: "Haute Couture",
+    title: "Muoti",
   },
   {
     id: "8",
     imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
     category: "portraits",
-    title: "Raw Beauty",
+    title: "Kauneus",
   },
   {
     id: "9",
     imageUrl: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
     category: "events",
-    title: "Timeless Moments",
+    title: "Ajattomat hetket",
   },
   {
     id: "10",
     imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
     category: "commercial",
-    title: "Editorial Grace",
+    title: "Editoriaalinen",
   },
   {
     id: "11",
     imageUrl: "https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=800&q=80",
     category: "creative",
-    title: "Shadow Play",
+    title: "Varjojen leikki",
   },
   {
     id: "12",
     imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
     category: "portraits",
-    title: "Contemplation",
+    title: "Mietiskely",
   },
 ];
 
 // Filter Categories
 export const portfolioCategories = [
-  { id: "all", label: "All" },
-  { id: "portraits", label: "Portraits" },
-  { id: "events", label: "Events" },
-  { id: "commercial", label: "Commercial" },
-  { id: "creative", label: "Creative" },
+  { id: "all", label: "Kaikki" },
+  { id: "portraits", label: "Muotokuvat" },
+  { id: "events", label: "Tapahtumat" },
+  { id: "commercial", label: "Kaupalliset" },
+  { id: "creative", label: "Luovat" },
 ] as const;
 
 // Pricing Packages
 export const pricingPackages: PricingPackage[] = [
   {
     id: "essential",
-    title: "The Essential",
-    price: "$450",
-    description: "Perfect for personal portraits and small sessions",
+    title: "Peruspaketti",
+    price: "450 €",
+    description: "Sopii henkilökuviin ja pieniin kuvauksiin",
     features: [
-      "2-hour photo session",
-      "1 location",
-      "25 edited photographs",
-      "Online gallery",
-      "Print-ready files",
+      "2 tunnin kuvaussessio",
+      "1 kuvauspaikka",
+      "25 muokattua kuvaa",
+      "Verkkogalleria",
+      "Tulostusvalmiit tiedostot",
     ],
   },
   {
     id: "professional",
-    title: "The Professional",
-    price: "$950",
-    description: "Ideal for events and commercial projects",
+    title: "Ammattipaketti",
+    price: "950 €",
+    description: "Ihanteellinen tapahtumiin ja kaupallisiin projekteihin",
     features: [
-      "Full-day coverage (8 hours)",
-      "Multiple locations",
-      "100+ edited photographs",
-      "Online gallery with sharing",
-      "Print-ready high-res files",
-      "2 rounds of revisions",
-      "Express delivery",
+      "Koko päivän kuvaus (8 tuntia)",
+      "Useita kuvauspaikkoja",
+      "100+ muokattua kuvaa",
+      "Verkkogalleria jakomahdollisuudella",
+      "Korkearesoluutioiset tiedostot",
+      "2 muokkauskierrosta",
+      "Pikatoimitus",
     ],
     featured: true,
   },
   {
     id: "enterprise",
-    title: "The Enterprise",
-    price: "$2,400",
-    description: "Comprehensive solution for brands and campaigns",
+    title: "Premium-paketti",
+    price: "2 400 €",
+    description: "Kattava ratkaisu brändeille ja kampanjoille",
     features: [
-      "Multi-day coverage",
-      "Unlimited locations",
-      "300+ edited photographs",
-      "Private online gallery",
-      "Full commercial license",
-      "Unlimited revisions",
-      "Priority support",
-      "Same-week delivery",
+      "Monipäiväinen kuvaus",
+      "Rajattomat kuvauspaikat",
+      "300+ muokattua kuvaa",
+      "Yksityinen verkkogalleria",
+      "Täysi kaupallinen lisenssi",
+      "Rajattomat muokkaukset",
+      "Ensisijainen tuki",
+      "Toimitus viikon sisällä",
     ],
   },
 ];
 
 // About Content
 export const aboutContent = {
-  heading: "The Story Behind the Lens",
+  heading: "Osaamiseni",
   photographer: {
-    name: "Alexandra Kolpu",
-    role: "Founder & Lead Photographer",
+    name: "Konsta Pulkkinen",
+    role: "Tapahtuma- ja juhlakuvaaja",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80",
-    bio: `With over a decade of experience capturing life's most meaningful moments, I believe that every photograph should tell a story—one that resonates, inspires, and endures.
+    bio: `Yli kymmenen vuoden kokemuksella ikuistan elämän merkityksellisimmät hetket. Uskon, että jokaisen valokuvan tulee kertoa tarina — sellainen, joka koskettaa, inspiroi ja kestää aikaa.
 
-My approach is rooted in Nordic minimalism: clean compositions, natural light, and authentic emotions. I don't just take photos; I create timeless visual narratives that honor your unique story.
+Lähestymistapani perustuu pohjoismaisen minimalismiin: puhtaat sommitelmat, luonnollinen valo ja aidot tunteet. En vain ota kuvia; luon ajattomia visuaalisia tarinoita, jotka kunnioittavat sinun ainutlaatuista tarinaasi.
 
-From intimate portraits to grand celebrations, from editorial campaigns to creative visions, I bring the same dedication to every project: an unwavering commitment to excellence and an eye for the unseen beauty in every moment.`,
+Intiimeistä muotokuvista suuriin juhliin, editoriaalista kampanjoista luoviin visioihin — tuon jokaiseen projektiin saman omistautumisen: horjumattoman sitoutumisen laatuun ja silmän näkemättömälle kauneudelle jokaisessa hetkessä.`,
   },
   stats: [
-    { value: "500+", label: "Projects Completed" },
-    { value: "12", label: "Years Experience" },
-    { value: "50+", label: "Brand Partners" },
+    { value: "500+", label: "Projektia" },
+    { value: "12", label: "Vuotta kokemusta" },
+    { value: "50+", label: "Yhteistyökumppania" },
   ],
 };
 
 // Contact Content
 export const contactContent = {
-  heading: "Let's Create Together",
-  subheading: "Ready to bring your vision to life? Tell me about your project.",
-  email: "hello@kolpu.studio",
-  phone: "+1 (555) 123-4567",
-  location: "New York City",
+  heading: "Otetaan yhteyttä",
+  subheading: "Haluatko ikuistaa tärkeän hetken? Kerro projektistasi.",
+  email: "konsta@pulkkinen.fi",
+  phone: "+358 40 123 4567",
+  location: "Helsinki",
   projectTypes: [
-    "Portrait Session",
-    "Wedding & Events",
-    "Commercial Project",
-    "Creative Direction",
-    "Brand Campaign",
-    "Other",
+    "Muotokuvaus",
+    "Häät ja juhlat",
+    "Tapahtumakuvaus",
+    "Kaupallinen projekti",
+    "Brändikampanja",
+    "Muu",
   ],
 };
 
 // Footer Content
 export const footerContent = {
-  copyright: `© ${new Date().getFullYear()} Kolpu. All rights reserved.`,
-  tagline: "Capturing the Unseen",
+  copyright: `© ${new Date().getFullYear()} Konsta Pulkkinen. Kaikki oikeudet pidätetään.`,
+  tagline: "Aitoja hetkiä, ikuisia muistoja",
   socialLinks: [
     { platform: "Instagram", url: "https://instagram.com" },
-    { platform: "Pinterest", url: "https://pinterest.com" },
     { platform: "LinkedIn", url: "https://linkedin.com" },
   ] as SocialLink[],
 };

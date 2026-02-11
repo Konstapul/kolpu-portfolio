@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { heroContent } from "@/data/content";
-import { ChevronDown } from "lucide-react";
+import { heroContent, miniPortfolioItems } from "@/data/content";
 
 const Hero = () => {
+  const row1 = miniPortfolioItems.slice(0, 3);
+  const row2 = miniPortfolioItems.slice(3, 6);
+  const row3 = miniPortfolioItems.slice(6, 9);
+
   const scrollToPortfolio = () => {
     const element = document.querySelector("#portfolio");
     if (element) {
@@ -11,75 +14,115 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&q=80"
-          alt="Hero background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-overlay-dark/40" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
-        <motion.p
+    <section className="pt-28 pb-16 px-6 md:px-12 lg:px-20 bg-background">
+      <div className="max-w-5xl mx-auto">
+        {/* Name & Niche */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-overlay-light/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
         >
-          Photography Studio
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">
+            {heroContent.name}
+          </h1>
+          <p className="text-muted-foreground text-sm md:text-base tracking-[0.2em] uppercase mt-3">
+            {heroContent.niche}
+          </p>
+        </motion.div>
+
+        {/* Row 1 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-3 gap-3 md:gap-4"
+        >
+          {row1.map((item) => (
+            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Tagline Row 1 */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center text-xl md:text-3xl lg:text-4xl font-light italic my-6 md:my-10 tracking-wide"
+        >
+          {heroContent.taglineRow1}
         </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
+        {/* Row 2 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="hero-heading text-overlay-light max-w-5xl"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="grid grid-cols-3 gap-3 md:gap-4"
         >
-          {heroContent.heading}
-        </motion.h1>
+          {row2.map((item) => (
+            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </motion.div>
 
+        {/* Tagline Row 2 */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="text-center text-xl md:text-3xl lg:text-4xl font-light italic my-6 md:my-10 tracking-wide"
+        >
+          {heroContent.taglineRow2}
+        </motion.p>
+
+        {/* Row 3 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="hero-subheading text-overlay-light/70 mt-8 max-w-xl"
+          className="grid grid-cols-3 gap-3 md:gap-4"
         >
-          {heroContent.subheading}
-        </motion.p>
+          {row3.map((item) => (
+            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </motion.div>
 
-        <motion.button
+        {/* Portfolio Link */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          onClick={scrollToPortfolio}
-          className="mt-12 text-overlay-light text-sm tracking-[0.2em] uppercase border-b border-overlay-light/50 pb-2 hover:border-overlay-light transition-colors duration-300"
+          className="text-center mt-10 md:mt-14"
         >
-          {heroContent.ctaText}
-        </motion.button>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 cursor-pointer"
-        onClick={scrollToPortfolio}
-      >
-        <span className="text-overlay-light/50 text-xs tracking-[0.2em] uppercase">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="text-overlay-light/50" size={20} />
+          <button
+            onClick={scrollToPortfolio}
+            className="text-sm md:text-base tracking-[0.3em] uppercase font-medium border-b-2 border-foreground pb-2 hover:text-muted-foreground hover:border-muted-foreground transition-colors duration-300"
+          >
+            {heroContent.portfolioLinkText}
+          </button>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

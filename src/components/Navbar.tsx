@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navigationLinks } from "@/data/content";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +11,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,47 +32,38 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? "bg-background/90 backdrop-blur-md border-b border-border"
-            : "bg-transparent"
+            : "bg-background/80 backdrop-blur-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-16">
             <a
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="text-xl md:text-2xl font-bold tracking-tight"
+              className="text-lg md:text-xl font-bold tracking-tight"
             >
-              Kolpu
+              KP
             </a>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navigationLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="btn-ghost"
+                  className="btn-ghost text-xs tracking-[0.15em] uppercase"
                 >
                   {link.label}
                 </button>
               ))}
-              <Button
-                onClick={() => scrollToSection("#contact")}
-                className="btn-primary rounded-none"
-              >
-                Book Now
-              </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2"
-              aria-label="Toggle menu"
+              aria-label="Valikko"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -82,7 +71,6 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -111,18 +99,6 @@ const Navbar = () => {
                   {link.label}
                 </motion.button>
               ))}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Button
-                  onClick={() => scrollToSection("#contact")}
-                  className="btn-primary rounded-none mt-4"
-                >
-                  Book Now
-                </Button>
-              </motion.div>
             </motion.div>
           </motion.div>
         )}

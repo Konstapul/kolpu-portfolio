@@ -42,9 +42,6 @@ const Portfolio = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
-            Selected Works
-          </p>
           <h2>Portfolio</h2>
         </motion.div>
 
