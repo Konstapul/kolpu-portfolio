@@ -4,7 +4,7 @@
 export interface PortfolioItem {
   id: string;
   imageUrl: string;
-  category: "portraits" | "events" | "commercial" | "creative";
+  category: "juhlat" | "tapahtumat";
   title: string;
   description?: string;
 }
@@ -46,146 +46,146 @@ export const heroContent = {
 };
 
 // Mini Portfolio Grid (9 images for landing 3x3)
+// Layout: Top row (1-3), Middle row (4-6), Bottom row (7-9)
 export const miniPortfolioItems: PortfolioItem[] = [
   {
     id: "mini-1",
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80",
-    category: "portraits",
-    title: "Muotokuva 1",
-  },
-  {
-    id: "mini-2",
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
-    category: "events",
-    title: "Tapahtuma 1",
-  },
-  {
-    id: "mini-3",
-    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
-    category: "events",
+    imageUrl: "/images/portfolio/juhlat/kansi1.JPG",
+    category: "juhlat",
     title: "Juhla 1",
   },
   {
+    id: "mini-2",
+    imageUrl: "/images/portfolio/juhlat/kansi2.JPG",
+    category: "juhlat",
+    title: "Juhla 2",
+  },
+  {
+    id: "mini-3",
+    imageUrl: "/images/portfolio/juhlat/kansi3.JPG",
+    category: "juhlat",
+    title: "Juhla 3",
+  },
+  {
     id: "mini-4",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-    category: "portraits",
-    title: "Muotokuva 2",
+    imageUrl: "/images/portfolio/juhlat/kansi4.JPG",
+    category: "juhlat",
+    title: "Juhla 4",
   },
   {
     id: "mini-5",
-    imageUrl: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80",
-    category: "events",
-    title: "Tapahtuma 2",
+    imageUrl: "/images/portfolio/juhlat/kansi5.JPG",
+    category: "juhlat",
+    title: "Juhla 5",
   },
   {
     id: "mini-6",
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    category: "creative",
-    title: "Luova 1",
+    imageUrl: "/images/portfolio/juhlat/kansi6.JPG",
+    category: "juhlat",
+    title: "Juhla 6",
   },
   {
     id: "mini-7",
-    imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80",
-    category: "portraits",
-    title: "Muotokuva 3",
+    imageUrl: "/images/portfolio/juhlat/kansi7.JPG",
+    category: "juhlat",
+    title: "Juhla 7",
   },
   {
     id: "mini-8",
-    imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80",
-    category: "commercial",
-    title: "Kaupallinen 1",
+    imageUrl: "/images/portfolio/juhlat/kansi8.JPG",
+    category: "juhlat",
+    title: "Juhla 8",
   },
   {
     id: "mini-9",
-    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80",
-    category: "portraits",
-    title: "Muotokuva 4",
+    imageUrl: "/images/portfolio/juhlat/kansi9.JPG",
+    category: "juhlat",
+    title: "Juhla 9",
   },
 ];
 
 // Portfolio Items (full portfolio page)
+// Your actual portfolio images - update titles as needed
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "1",
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
-    category: "portraits",
-    title: "Muotokuva",
+    imageUrl: "/images/portfolio/juhlat/IMG_4429a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "2",
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-    category: "events",
-    title: "Juhlat",
+    imageUrl: "/images/portfolio/juhlat/IMG_5176.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "3",
-    imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-    category: "commercial",
-    title: "Kaupallinen",
+    imageUrl: "/images/portfolio/juhlat/IMG_5411a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "4",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
-    category: "portraits",
-    title: "Hiljainen voima",
+    imageUrl: "/images/portfolio/juhlat/IMG_5737.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "5",
-    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    category: "events",
-    title: "Kultaiset lupaukset",
+    imageUrl: "/images/portfolio/juhlat/IMG_5752.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "6",
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    category: "creative",
-    title: "Liike",
+    imageUrl: "/images/portfolio/juhlat/IMG_6494b.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "7",
-    imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80",
-    category: "commercial",
-    title: "Muoti",
+    imageUrl: "/images/portfolio/juhlat/IMG_8459a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "8",
-    imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
-    category: "portraits",
-    title: "Kauneus",
+    imageUrl: "/images/portfolio/juhlat/IMG_8481a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "9",
-    imageUrl: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
-    category: "events",
-    title: "Ajattomat hetket",
+    imageUrl: "/images/portfolio/juhlat/IMG_8899a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "10",
-    imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
-    category: "commercial",
-    title: "Editoriaalinen",
+    imageUrl: "/images/portfolio/juhlat/IMG_8919a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "11",
-    imageUrl: "https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=800&q=80",
-    category: "creative",
-    title: "Varjojen leikki",
+    imageUrl: "/images/portfolio/juhlat/IMG_9216a.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
   {
     id: "12",
-    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
-    category: "portraits",
-    title: "Mietiskely",
+    imageUrl: "/images/portfolio/juhlat/IMG_9289.JPG",
+    category: "juhlat",
+    title: "Juhla",
   },
 ];
 
 // Filter Categories
 export const portfolioCategories = [
   { id: "all", label: "Kaikki" },
-  { id: "portraits", label: "Muotokuvat" },
-  { id: "events", label: "Tapahtumat" },
-  { id: "commercial", label: "Kaupalliset" },
-  { id: "creative", label: "Luovat" },
+  { id: "juhlat", label: "Juhlat" },
+  { id: "tapahtumat", label: "Tapahtumat" },
 ] as const;
 
 // Pricing Packages
