@@ -243,12 +243,18 @@ export const aboutContent = {
   photographer: {
     name: "Konsta Pulkkinen",
     role: "Tapahtuma- ja juhlakuvaaja",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80",
-    bio: `Yli kymmenen vuoden kokemuksella ikuistan elämän merkityksellisimmät hetket. Uskon, että jokaisen valokuvan tulee kertoa tarina — sellainen, joka koskettaa, inspiroi ja kestää aikaa.
+    image: "/images/hero/about.jpg",
+    bio: `Palveluni
 
-Lähestymistapani perustuu pohjoismaisen minimalismiin: puhtaat sommitelmat, luonnollinen valo ja aidot tunteet. En vain ota kuvia; luon ajattomia visuaalisia tarinoita, jotka kunnioittavat sinun ainutlaatuista tarinaasi.
+Olen Konsta Pulkkinen, valokuvaaja Nurmijärveltä. Yli kymmenen vuoden kuvauskokemukseni aikana olen erikoistunut yhteen asiaan: aitojen tilanteiden tallentamiseen. Oli kyse sitten ohi vilahtavasta yksityiskohdasta, ystävien naurusta tai urheilun vauhdista, ohikiitävien hetkien ikuistaminen on minulle sydämenasia.
 
-Intiimeistä muotokuvista suuriin juhliin, editoriaalista kampanjoista luoviin visioihin — tuon jokaiseen projektiin saman omistautumisen: horjumattoman sitoutumisen laatuun ja silmän näkemättömälle kauneudelle jokaisessa hetkessä.`,
+Aitoja tilannekuvia
+Jos etsit perinteisiä ja jäykästi lavastettuja hääportretteja, suosittelen kääntymään toisen kuvaajan puoleen. Mutta jos haluat ikuistaa juhliesi todellisen tunnelman, olen sinun kuvaajasi.
+
+Tyylini on huomaamaton. Liikun vieraiden seassa juhlia häiritsemättä ja etsin jatkuvasti tilanteita kuvattavaksi. Kuvaan mieluiten ilman salamaa säilyttääkseni tilan aidon valon ja tunnelman. Keskityn yksityiskohtiin, hymyihin ja luonnollisiin potretteihin. Koska tanssi on myös oma intohimoni, tanssilattian energian taltioiminen on yksi ehdottomista vahvuuksistani. Lopputuloksena saat kuvapaketin, joka kertoo rehellisen tarinan illan kulusta.
+
+Juhlien lisäksi
+Hää- ja juhlakuvauksen lisäksi kuvaan mielelläni urheilu- ja yritystapahtumia tai taltioin edustavia kuvia sinusta harrastuksesi parissa. Liikun myös luontevasti luonnossa ja maastossa. Toimin pääasiassa pääkaupunkiseudulla ja Uudellamaalla, mutta sopimuksen mukaan matkustan minne vain.`,
   },
   stats: [
     { value: "500+", label: "Projektia" },
@@ -259,10 +265,10 @@ Intiimeistä muotokuvista suuriin juhliin, editoriaalista kampanjoista luoviin v
 
 // Contact Content
 export const contactContent = {
-  heading: "Otetaan yhteyttä",
-  subheading: "Haluatko ikuistaa tärkeän hetken? Kerro projektistasi.",
-  email: "konsta@pulkkinen.fi",
-  phone: "+358 40 123 4567",
+  heading: "Yhteystiedot",
+  subheading: "Haluatko ikuistaa päivän? Voit lähettää sähköpostia tai soittaa. Olen myös Whatsappissa",
+  email: "konsta@kolpu.fi",
+  phone: "+358409004012",
   location: "Helsinki",
   projectTypes: [
     "Muotokuvaus",

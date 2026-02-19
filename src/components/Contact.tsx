@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { Send, Mail, Phone } from "lucide-react";
 import { contactContent } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -10,11 +10,12 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     date: "",
-    projectType: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -25,13 +26,51 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    toast({
-      title: "Viesti lähetetty",
-      description: "Kiitos yhteydenotostasi. Palaan asiaan 24 tunnin sisällä.",
-    });
-    setFormData({ name: "", email: "", date: "", projectType: "", message: "" });
-    setIsSubmitting(false);
+    setSubmitStatus(null);
+
+    try {
+      const formPayload = {
+        access_key: "YOUR_ACCESS_KEY_HERE",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || "",
+        date: formData.date || "",
+        message: formData.message,
+        botcheck: false,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formPayload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", phone: "", date: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+        toast({
+          title: "Virhe",
+          description: "Viestin lähetys epäonnistui. Yritä uudelleen.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      toast({
+        title: "Virhe",
+        description: "Viestin lähetys epäonnistui. Yritä uudelleen.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -57,10 +96,6 @@ const Contact = () => {
                 <Phone size={20} className="text-primary-foreground/50 group-hover:text-primary-foreground transition-colors" />
                 <span className="text-primary-foreground/70 group-hover:text-primary-foreground transition-colors">{contactContent.phone}</span>
               </a>
-              <div className="flex items-center gap-4">
-                <MapPin size={20} className="text-primary-foreground/50" />
-                <span className="text-primary-foreground/70">{contactContent.location}</span>
-              </div>
             </div>
           </motion.div>
 
@@ -70,25 +105,82 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="text" name="name" placeholder="Nimesi" value={formData.name} onChange={handleChange} required className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground" />
-                <input type="email" name="email" placeholder="Sähköpostisi" value={formData.email} onChange={handleChange} required className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <input type="date" name="date" value={formData.date} onChange={handleChange} className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground focus:border-primary-foreground [color-scheme:dark]" />
-                <select name="projectType" value={formData.projectType} onChange={handleChange} required className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground focus:border-primary-foreground appearance-none cursor-pointer">
-                  <option value="" disabled className="bg-primary text-primary-foreground">Projektin tyyppi</option>
-                  {contactContent.projectTypes.map((type) => (
-                    <option key={type} value={type} className="bg-primary text-primary-foreground">{type}</option>
-                  ))}
-                </select>
-              </div>
-              <textarea name="message" placeholder="Kerro projektistasi..." value={formData.message} onChange={handleChange} rows={4} className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground resize-none" />
-              <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none px-12 py-6 text-sm tracking-wide uppercase flex items-center gap-3">
-                {isSubmitting ? "Lähetetään..." : (<>Lähetä viesti<Send size={16} /></>)}
-              </Button>
-            </form>
+            {submitStatus === "success" ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-12"
+              >
+                <p className="text-primary-foreground text-lg md:text-xl">
+                  Kiitos viestistäsi! Palaan asiaan mahdollisimman pian.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="checkbox" name="botcheck" className="hidden" />
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nimi"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Sähköposti"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground"
+                  />
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Puhelinnumero"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground"
+                  />
+                  <input
+                    type="date"
+                    name="date"
+                    placeholder="Tapahtuman päivämäärä"
+                    value={formData.date}
+                    onChange={handleChange}
+                    className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground focus:border-primary-foreground [color-scheme:dark]"
+                  />
+                </div>
+                <textarea
+                  name="message"
+                  placeholder="Kerro lyhyesti tapahtumasta"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  required
+                  className="form-input bg-transparent border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-primary-foreground resize-none"
+                />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full md:w-auto bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-none px-12 py-6 text-sm tracking-wide uppercase flex items-center gap-3"
+                >
+                  {isSubmitting ? "Lähetetään..." : (
+                    <>
+                      Lähetä viesti
+                      <Send size={16} />
+                    </>
+                  )}
+                </Button>
+              </form>
+            )}
           </motion.div>
         </div>
       </div>

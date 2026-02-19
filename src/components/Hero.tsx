@@ -34,7 +34,7 @@ const Hero = () => {
           className="grid grid-cols-3 gap-3 md:gap-4"
         >
           {row1.map((item) => (
-            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+            <div key={item.id} className="image-hover aspect-[2/3] overflow-hidden">
               <img
                 src={item.imageUrl}
                 alt={item.title}
@@ -63,7 +63,7 @@ const Hero = () => {
           className="grid grid-cols-3 gap-3 md:gap-4"
         >
           {row2.map((item) => (
-            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+            <div key={item.id} className="image-hover aspect-[2/3] overflow-hidden">
               <img
                 src={item.imageUrl}
                 alt={item.title}
@@ -92,7 +92,7 @@ const Hero = () => {
           className="grid grid-cols-3 gap-3 md:gap-4"
         >
           {row3.map((item) => (
-            <div key={item.id} className="image-hover aspect-[3/4] overflow-hidden">
+            <div key={item.id} className="image-hover aspect-[2/3] overflow-hidden">
               <img
                 src={item.imageUrl}
                 alt={item.title}

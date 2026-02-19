@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import { aboutContent } from "@/data/content";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="osaamiseni" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
@@ -39,6 +47,21 @@ const About = () => {
                 </p>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-12"
+            >
+              <Button
+                onClick={() => scrollToSection("#yhteystiedot")}
+                className="btn-primary rounded-none"
+              >
+                Kerro minulle tapahtumastasi – Pyydä tarjous
+              </Button>
+            </motion.div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
