@@ -74,14 +74,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="yhteystiedot" className="section-padding bg-primary text-primary-foreground">
+    <section id="yhteystiedot" className="pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40 px-6 md:px-12 lg:px-20 bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center text-3xl md:text-4xl lg:text-5xl font-light mb-12 md:mb-16"
+          className="text-center text-[2.25rem] md:text-[2.7rem] lg:text-[3.6rem] font-light mb-12 md:mb-16"
         >
           Ota yhteyttä
         </motion.h1>

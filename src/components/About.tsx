@@ -46,8 +46,8 @@ const About = () => {
                 if (paragraph.trim() === "Palveluni") {
                   return null;
                 }
-                // Render "Aitoja tilannekuvia" as a sub-heading
-                if (paragraph.trim() === "Aitoja tilannekuvia") {
+                // Render "Aitoja tilannekuvia" and "Juhlien lisäksi" as sub-headings
+                if (paragraph.trim() === "Aitoja tilannekuvia" || paragraph.trim() === "Juhlien lisäksi") {
                   return (
                     <h3 key={index} className="text-xl md:text-2xl font-medium mt-8 mb-4">
                       {paragraph}
