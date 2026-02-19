@@ -41,11 +41,26 @@ const About = () => {
             <h2 className="mb-8">{aboutContent.heading}</h2>
 
             <div className="space-y-6 mb-12">
-              {aboutContent.photographer.bio.split("\n\n").map((paragraph, index) => (
-                <p key={index} className="text-muted-foreground leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+              {aboutContent.photographer.bio.split("\n\n").map((paragraph, index) => {
+                // Skip "Palveluni" if it appears
+                if (paragraph.trim() === "Palveluni") {
+                  return null;
+                }
+                // Render "Aitoja tilannekuvia" as a sub-heading
+                if (paragraph.trim() === "Aitoja tilannekuvia") {
+                  return (
+                    <h3 key={index} className="text-xl md:text-2xl font-medium mt-8 mb-4">
+                      {paragraph}
+                    </h3>
+                  );
+                }
+                // Render regular paragraphs
+                return (
+                  <p key={index} className="text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                );
+              })}
             </div>
 
             <motion.div
@@ -53,7 +68,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-12"
+              className="mb-12 flex justify-center"
             >
               <Button
                 onClick={() => scrollToSection("#yhteystiedot")}
@@ -62,26 +77,6 @@ const About = () => {
                 Kerro minulle tapahtumastasi – Pyydä tarjous
               </Button>
             </motion.div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
-              {aboutContent.stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                >
-                  <span className="text-3xl md:text-4xl font-light block mb-1">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-muted-foreground tracking-wide">
-                    {stat.label}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
 
             <motion.div
               initial={{ opacity: 0 }}

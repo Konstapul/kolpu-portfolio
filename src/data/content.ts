@@ -243,13 +243,11 @@ export const aboutContent = {
   photographer: {
     name: "Konsta Pulkkinen",
     role: "Tapahtuma- ja juhlakuvaaja",
-    image: "/images/hero/about.jpg",
-    bio: `Palveluni
-
-Olen Konsta Pulkkinen, valokuvaaja Nurmijärveltä. Yli kymmenen vuoden kuvauskokemukseni aikana olen erikoistunut yhteen asiaan: aitojen tilanteiden tallentamiseen. Oli kyse sitten ohi vilahtavasta yksityiskohdasta, ystävien naurusta tai urheilun vauhdista, ohikiitävien hetkien ikuistaminen on minulle sydämenasia.
+    image: "/images/about/aboutme.jpg",
+    bio: `Olen Konsta Pulkkinen, valokuvaaja Nurmijärveltä. Yli kymmenen vuoden kuvauskokemukseni aikana olen erikoistunut yhteen asiaan: aitojen tilanteiden tallentamiseen. Oli kyse sitten ohi vilahtavasta yksityiskohdasta, ystävien naurusta tai urheilun vauhdista, ohikiitävien hetkien ikuistaminen on minulle sydämenasia.
 
 Aitoja tilannekuvia
-Jos etsit perinteisiä ja jäykästi lavastettuja hääportretteja, suosittelen kääntymään toisen kuvaajan puoleen. Mutta jos haluat ikuistaa juhliesi todellisen tunnelman, olen sinun kuvaajasi.
+Jos etsit perinteisiä lavastettuja hääportretteja, suosittelen kääntymään toisen kuvaajan puoleen. Mutta jos haluat ikuistaa juhliesi todellisen tunnelman, olen sinun kuvaajasi.
 
 Tyylini on huomaamaton. Liikun vieraiden seassa juhlia häiritsemättä ja etsin jatkuvasti tilanteita kuvattavaksi. Kuvaan mieluiten ilman salamaa säilyttääkseni tilan aidon valon ja tunnelman. Keskityn yksityiskohtiin, hymyihin ja luonnollisiin potretteihin. Koska tanssi on myös oma intohimoni, tanssilattian energian taltioiminen on yksi ehdottomista vahvuuksistani. Lopputuloksena saat kuvapaketin, joka kertoo rehellisen tarinan illan kulusta.
 
