@@ -32,7 +32,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="section-padding bg-background">
+    <section id="portfolio" className="pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40 px-6 md:px-12 lg:px-20 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

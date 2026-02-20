@@ -39,7 +39,7 @@ export const navigationLinks: NavigationLink[] = [
 // Hero / Landing Content
 export const heroContent = {
   name: "Konsta Pulkkinen",
-  mainHeading: "Dokumentaarinen Tapahtuma- ja Juhlakuvaaja",
+  mainHeading: "Tapahtuma- ja Juhlakuvaaja",
   location: "Helsinki & Uusimaa",
   taglineRow1: "Aitoja hetkiä",
   taglineRow2: "Ikuisia muistoja",
@@ -255,9 +255,9 @@ Tyylini on huomaamaton. Liikun vieraiden seassa juhlia häiritsemättä ja etsin
 
 Juhlien lisäksi
 
-Hää- ja juhlakuvauksen lisäksi kuvaan mielelläni urheilu- ja yritystapahtumia tai taltioin edustavia kuvia sinusta harrastuksesi parissa. Liikun myös luontevasti luonnossa ja maastossa. Toimin pääasiassa pääkaupunkiseudulla ja Uudellamaalla, mutta sopimuksen mukaan matkustan minne vain.
+Hää- ja juhlakuvauksen lisäksi kuvaan mielelläni urheilu- ja yritystapahtumia tai taltioin edustavia kuvia sinusta harrastuksesi parissa. Liikun myös luontevasti luonnossa ja maastossa.
 
-Kuvaan alueilla: Helsinki, Espoo, Vantaa, Nurmijärvi ja koko Uusimaa.`,
+Kuvaan alueilla: Helsinki, Espoo, Vantaa, Nurmijärvi ja koko Uusimaa, mutta sopimuksen mukaan matkustan minne vain.`,
   },
   stats: [
     { value: "500+", label: "Projektia" },
