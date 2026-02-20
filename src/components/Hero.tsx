@@ -18,11 +18,14 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">
-            {heroContent.name}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight">
+            {heroContent.mainHeading}
           </h1>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight mt-4 text-muted-foreground">
+            {heroContent.name}
+          </h2>
           <p className="text-muted-foreground text-sm md:text-base tracking-[0.2em] uppercase mt-3">
-            {heroContent.niche}
+            {heroContent.location}
           </p>
         </motion.div>
 

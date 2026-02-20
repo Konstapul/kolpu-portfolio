@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Kolpu Photography - Nordic Minimalist Design System
    Monochromatic palette with editorial elegance
    All colors MUST be HSL */
