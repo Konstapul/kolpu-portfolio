@@ -51,7 +51,7 @@ export const heroContent = {
 export const miniPortfolioItems: PortfolioItem[] = [
   {
     id: "mini-1",
-    imageUrl: "/images/portfolio/juhlat/landing1.JPG",
+    imageUrl: "/images/portfolio/juhlat/kansi1.JPG",
     category: "juhlat",
     title: "Juhla 1",
   },
