@@ -106,7 +106,7 @@ export const miniPortfolioItems: PortfolioItem[] = [
 ];
 
 // Portfolio Items (full portfolio page)
-// Your actual portfolio images - update titles as needed
+// Synced with public/images/portfolio/juhlat (IMG_* files only)
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "1",
@@ -116,48 +116,36 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "2",
-    imageUrl: "/images/portfolio/juhlat/IMG_5411a.JPG",
-    category: "juhlat",
-    title: "Juhla",
-  },
-  {
-    id: "3",
     imageUrl: "/images/portfolio/juhlat/IMG_5737.JPG",
     category: "juhlat",
     title: "Juhla",
   },
   {
-    id: "4",
-    imageUrl: "/images/portfolio/juhlat/IMG_6494b.JPG",
-    category: "juhlat",
-    title: "Juhla",
-  },
-  {
-    id: "5",
+    id: "3",
     imageUrl: "/images/portfolio/juhlat/IMG_8459a.JPG",
     category: "juhlat",
     title: "Juhla",
   },
   {
-    id: "6",
+    id: "4",
     imageUrl: "/images/portfolio/juhlat/IMG_8481a.JPG",
     category: "juhlat",
     title: "Juhla",
   },
   {
-    id: "7",
+    id: "5",
     imageUrl: "/images/portfolio/juhlat/IMG_8919a.JPG",
     category: "juhlat",
     title: "Juhla",
   },
   {
-    id: "8",
+    id: "6",
     imageUrl: "/images/portfolio/juhlat/IMG_9216a.JPG",
     category: "juhlat",
     title: "Juhla",
   },
   {
-    id: "9",
+    id: "7",
     imageUrl: "/images/portfolio/juhlat/IMG_9289.JPG",
     category: "juhlat",
     title: "Juhla",
